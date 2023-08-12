@@ -1,12 +1,13 @@
 import React from "react";
+import { getTasks } from "../../services/task/index.js";
+import { TasksPageContainer } from "../../containers/tasks-page-container/index.jsx";
 
 function TasksPage() {
-    return <div>TasksPage</div>
+    return <TasksPageContainer />
 }
 
-const taskPageLoader = (params) => {
-    console.log("here", params)
-    return null
-}
+export const tasksPageLoader = () => {
+    return getTasks();
+};
 
-export { TasksPage, taskPageLoader }
+export { TasksPage }
