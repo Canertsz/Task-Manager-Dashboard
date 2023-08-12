@@ -5,6 +5,7 @@ import { HomePage } from "../pages/home-page/index.jsx";
 import { TasksPage, tasksPageLoader } from "../pages/tasks-page/index.jsx";
 import { CreateTaskPage, createTaskPageSubmitAction } from "../pages/create-task-page/index.jsx";
 import {TaskDetailPage} from "../pages/task-detail-page/index.jsx";
+import { NoMatch } from "../components/no-match/index.jsx";
 
 export const router = createBrowserRouter([
     {
@@ -27,6 +28,10 @@ export const router = createBrowserRouter([
             {
                 path: "/tasks/:id",
                 element: <TaskDetailPage />
+            },
+            {
+                path:"*",
+                element: <NoMatch />
             }
         ]
     }
